@@ -3,9 +3,14 @@
 
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 9748,
+  "packagerPid": 5362,
   "expoServerNgrokUrl": "https://ag-wqj.anonymous.react-native.exp.direct",
   "packagerNgrokUrl": "https://packager.ag-wqj.anonymous.react-native.exp.direct",
+<<<<<<< HEAD
   "ngrokPid": 9776
 
+=======
+  "ngrokPid": 5385,
+  "webpackServerPort": null
+>>>>>>> new
 }
