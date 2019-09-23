@@ -6,8 +6,8 @@ export default class Numbers extends Component {
     render() {
         return (
             <View>
-            <NavNumbers/>
-            <SliderNumbers/>
+            {/* <NavNumbers/> */}
+            {/* <SliderNumbers/> */}
             </View>
         )
     }
