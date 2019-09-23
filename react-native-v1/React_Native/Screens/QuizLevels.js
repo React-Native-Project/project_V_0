@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 export default class QuizLevels extends Component {
     render() {
         return (
-            <div>
-                
-            </div>
-        )
+            <View style={styles.screen}>
+            <Text> The quizelevels Screen!</Text>
+            </View>    
+        );
     }
 }
