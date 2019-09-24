@@ -14,7 +14,7 @@ export default function App() {
       {/* <Numbers/> */}
       {/* <Navigation /> */}
       <ExercisesPage />
-
+ 
     </View>
   );
 }
