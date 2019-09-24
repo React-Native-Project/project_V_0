@@ -2,8 +2,16 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
+<<<<<<< HEAD
   "packagerPid": 3427,
   "expoServerNgrokUrl": "https://u2-g38.anonymous.react-native.exp.direct",
   "packagerNgrokUrl": "https://packager.u2-g38.anonymous.react-native.exp.direct",
   "ngrokPid": 3499
+=======
+  "packagerPid": 5362,
+  "expoServerNgrokUrl": "https://ag-wqj.anonymous.react-native.exp.direct",
+  "packagerNgrokUrl": "https://packager.ag-wqj.anonymous.react-native.exp.direct",
+  "ngrokPid": 5385,
+  "webpackServerPort": null
+>>>>>>> origin
 }
