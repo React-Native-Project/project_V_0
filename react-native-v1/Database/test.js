@@ -4,9 +4,9 @@ let kids = db.kids;
 //write your code here
 
 
-let kidsTest = (firstName,phone, cb) => {
- console.log("first")
-  kids.create({firstName:firstName,phone:phone}, (err, data) => {
+let kidsPost = (number1,number2,operator,answer, cb) => {
+ console.log("post test")
+  kids.create({number1:number1,number2:number2,operator:operator,answer:answer}, (err, data) => {
     if (err) {
       cb(err);
     } else {
@@ -15,6 +15,18 @@ let kidsTest = (firstName,phone, cb) => {
   });
 };
 
+let kidsGet = (cb) => {
+  console.log("get test")
+   kids.find({}, (err, data) => {
+     if (err) {
+       cb(err);
+     } else {
+       cb(data);
+     }
+   });
+ };
+
 module.exports = {
-    kidsTest
+    kidsPost,
+    kidsGet
 };
