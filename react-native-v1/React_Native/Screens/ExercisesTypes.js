@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { StyleSheet, Text, View, TouchableOpacity,ScrollView,Image} from 'react-native';
@@ -58,5 +59,8 @@ const ExercisesTypes = () => {
   });
      
      
-  
+
 export default ExercisesTypes;
+
+
+
