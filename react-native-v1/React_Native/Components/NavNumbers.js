@@ -5,7 +5,7 @@ export default class NavNumbers extends Component {
         return (
             <View>
                 <Text>
-                    Rawabi okour 
+                    Ahmad Sharafeddin
                 </Text>
             </View>
         )

@@ -14,8 +14,8 @@ const MathNavigator = createStackNavigator(
     ExercisesPage: ExercisesPage,
     // ExercisesTypes: ExercisesTypes,
     Numbers: Numbers,
-    QuizLevels: QuizLevels
-    //   QuizPage: QuizPage
+    QuizLevels: QuizLevels,
+    QuizPage: QuizPage
   },
   { headerLayoutPreset: "center" }
 );

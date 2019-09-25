@@ -21,14 +21,14 @@ export default class ExercisesPage extends Component {
     randomAnswer2: "",
     randomAnswer3: "",
     arrayNumbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-    answerRandomValue1:0,
-    answerRandomValue2:0,
-    answerRandomValue3:0,
-    answerRandomValue4:0,
-    arrayRandomValue:[]
+    answerRandomValue1: 0,
+    answerRandomValue2: 0,
+    answerRandomValue3: 0,
+    answerRandomValue4: 0,
+    arrayRandomValue: []
   }
   pressRandomAnswer1 = () => {
-    if (this.state.answerRandomValue1  === this.state.answer) {
+    if (this.state.answerRandomValue1 === this.state.answer) {
       Alert.alert('Excellent Right Answer')
       // this.randomExercise(this.state.exercises)
     }
@@ -37,7 +37,7 @@ export default class ExercisesPage extends Component {
     }
   }
   pressRandomAnswer2 = () => {
-    if (this.state.answerRandomValue2  === this.state.answer) {
+    if (this.state.answerRandomValue2 === this.state.answer) {
       Alert.alert('Excellent Right Answer')
       // this.randomExercise(this.state.exercises)
     }
@@ -46,7 +46,7 @@ export default class ExercisesPage extends Component {
     }
   }
   pressRandomAnswer3 = () => {
-    if (this.state.answerRandomValue3  === this.state.answer) {
+    if (this.state.answerRandomValue3 === this.state.answer) {
       Alert.alert('Excellent Right Answer')
       // this.randomExercise(this.state.exercises)
     }
@@ -55,7 +55,7 @@ export default class ExercisesPage extends Component {
     }
   }
   pressRandomAnswer4 = () => {
-    if (this.state.answerRandomValue4  === this.state.answer) {
+    if (this.state.answerRandomValue4 === this.state.answer) {
       Alert.alert('Excellent Right Answer')
       // this.randomExercise(this.state.exercises)
     }
@@ -134,33 +134,33 @@ export default class ExercisesPage extends Component {
       this.state.arrayNumbers.splice(remove3, 1);
     }
     console.log(this.state.arrayNumbers)
-     //push answers values to arrayRandomValue
+    //push answers values to arrayRandomValue
     this.state.arrayRandomValue.push(this.state.randomAnswer1)
     this.state.arrayRandomValue.push(this.state.randomAnswer2)
     this.state.arrayRandomValue.push(this.state.randomAnswer3)
     this.state.arrayRandomValue.push(this.state.answer)
-    console.log("arrayRandomValue",this.state.arrayRandomValue)
+    console.log("arrayRandomValue", this.state.arrayRandomValue)
 
     this.setState({ answerRandomValue1: this.state.arrayRandomValue[Math.floor((Math.random() * this.state.arrayRandomValue.length))] })
-    console.log("answerRandomValue1",this.state.answerRandomValue1)
+    console.log("answerRandomValue1", this.state.answerRandomValue1)
     let removeValue1 = this.state.arrayRandomValue.indexOf(this.state.answerRandomValue1);
     if (removeValue1 > -1) {
       this.state.arrayRandomValue.splice(removeValue1, 1);
     }
     this.setState({ answerRandomValue2: this.state.arrayRandomValue[Math.floor((Math.random() * this.state.arrayRandomValue.length))] })
-    console.log("answerRandomValue2",this.state.answerRandomValue2)
+    console.log("answerRandomValue2", this.state.answerRandomValue2)
     let removeValue2 = this.state.arrayRandomValue.indexOf(this.state.answerRandomValue2);
     if (removeValue2 > -1) {
       this.state.arrayRandomValue.splice(removeValue2, 1);
     }
     this.setState({ answerRandomValue3: this.state.arrayRandomValue[Math.floor((Math.random() * this.state.arrayRandomValue.length))] })
-    console.log("answerRandomValue3",this.state.answerRandomValue3)
+    console.log("answerRandomValue3", this.state.answerRandomValue3)
     let removeValue3 = this.state.arrayRandomValue.indexOf(this.state.answerRandomValue3);
     if (removeValue3 > -1) {
       this.state.arrayRandomValue.splice(removeValue3, 1);
     }
     this.setState({ answerRandomValue4: this.state.arrayRandomValue[Math.floor((Math.random() * this.state.arrayRandomValue.length))] })
-    console.log("answerRandomValue4",this.state.answerRandomValue4)
+    console.log("answerRandomValue4", this.state.answerRandomValue4)
     let removeValue4 = this.state.arrayRandomValue.indexOf(this.state.answerRandomValue4);
     if (removeValue4 > -1) {
       this.state.arrayRandomValue.splice(removeValue4, 1);
@@ -187,6 +187,7 @@ export default class ExercisesPage extends Component {
 
     return (
       <View style={styles.container}>
+        <Text>ok</Text>
         <View style={styles.row}>
           <TextInput
             style={{ height: 40, width: 70, fontSize: 40, textAlign: 'center' }}

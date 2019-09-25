@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from "react-native";
+import React, { Component } from "react";
+import { StyleSheet, Text, View } from 'react-native';
 import MathNavigator from "./navgation";
 
 export default class App extends Component {
-  render(){
-    return (
-      <MathNavigator />
-    );
+  render() {
+    return <MathNavigator />;
+    
   }
+
+
 }
 
 const styles = StyleSheet.create({
@@ -18,3 +19,5 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   }
 });
+
+
