@@ -15,8 +15,10 @@ db.once('open', function () {
 
 
 let KidsSchema = new mongoose.Schema({
-  firstName: String,
-  phone: String,
+  number1:Number,
+  number2:Number,
+  operator:String,
+  answer: Number,
 });
 
 let kids = mongoose.model('kids', KidsSchema);
@@ -26,6 +28,7 @@ let kids = mongoose.model('kids', KidsSchema);
 module.exports = {
   kids
 }
+
 
 
 

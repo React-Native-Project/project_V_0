@@ -1,14 +1,13 @@
-import React from "react";
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from "react-native";
-
 import MathNavigator from "./navgation";
 
-import Numbers from "./Screens/Numbers";
-
-export default function App() {
-  return (
-    <MathNavigator />
-  );
+export default class App extends Component {
+  render(){
+    return (
+      <MathNavigator />
+    );
+  }
 }
 
 const styles = StyleSheet.create({

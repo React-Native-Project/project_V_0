@@ -4,11 +4,20 @@ const mongo = require("../Database/test");
 
 //write your code here
 
-router.post("/:firstName/:phone", (req, res) => {
-  console.log("test server")
-    let firstName=req.params.firstName;
-    let phone=req.params.phone;
-  mongo.kidsTest(firstName,phone, result => {
+router.post("/:number1/:number2/:operator/:answer", (req, res) => {
+  console.log("test post server")
+    let number1=req.params.number1;
+    let number2=req.params.number2;
+    let operator=req.params.operator;
+    let answer=req.params.answer;
+  mongo.kidsPost(number1,number2,operator,answer, result => {
+    res.json(result);
+  });
+});
+
+router.get("/", (req, res) => {
+  console.log("test get server")
+  mongo.kidsGet(result => {
     res.json(result);
   });
 });
