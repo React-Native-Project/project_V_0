@@ -63,3 +63,5 @@ const ExercisesTypes = () => {
 };
 
 export default ExercisesTypes;
+
+
