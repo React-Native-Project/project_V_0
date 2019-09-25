@@ -20,27 +20,59 @@ export default class ExercisesPage extends Component {
     randomAnswer1: "",
     randomAnswer2: "",
     randomAnswer3: "",
-    arrayNumbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    arrayNumbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    answerRandomValue1:0,
+    answerRandomValue2:0,
+    answerRandomValue3:0,
+    answerRandomValue4:0,
+    arrayRandomValue:[]
   }
   pressRandomAnswer1 = () => {
-    if (this.state.answer === this.state.randomAnswer1) {
+    if (this.state.answerRandomValue1  === this.state.answer) {
       Alert.alert('Excellent Right Answer')
-      this.randomExercise(this.state.exercises)
+      // this.randomExercise(this.state.exercises)
+    }
+    else {
+      Alert.alert('Wrong Answer')
+    }
+  }
+  pressRandomAnswer2 = () => {
+    if (this.state.answerRandomValue2  === this.state.answer) {
+      Alert.alert('Excellent Right Answer')
+      // this.randomExercise(this.state.exercises)
+    }
+    else {
+      Alert.alert('Wrong Answer')
+    }
+  }
+  pressRandomAnswer3 = () => {
+    if (this.state.answerRandomValue3  === this.state.answer) {
+      Alert.alert('Excellent Right Answer')
+      // this.randomExercise(this.state.exercises)
     }
     else {
       Alert.alert('Wrong Answer')
     }
   }
   pressRandomAnswer4 = () => {
-    if (this.state.answer === this.state.answer) {
+    if (this.state.answerRandomValue4  === this.state.answer) {
       Alert.alert('Excellent Right Answer')
       // this.randomExercise(this.state.exercises)
-      this.setState({ defaultAnswer: this.state.answer })
     }
     else {
       Alert.alert('Wrong Answer')
     }
   }
+  // pressRandomAnswer4 = () => {
+  //   if (this.state.answer === this.state.answer) {
+  //     Alert.alert('Excellent Right Answer')
+  //     // this.randomExercise(this.state.exercises)
+  //     this.setState({ defaultAnswer: this.state.answer })
+  //   }
+  //   else {
+  //     Alert.alert('Wrong Answer')
+  //   }
+  // }
   randomExercise(obj) {
     console.log("random")
     console.log(obj)
@@ -102,7 +134,37 @@ export default class ExercisesPage extends Component {
       this.state.arrayNumbers.splice(remove3, 1);
     }
     console.log(this.state.arrayNumbers)
+     //push answers values to arrayRandomValue
+    this.state.arrayRandomValue.push(this.state.randomAnswer1)
+    this.state.arrayRandomValue.push(this.state.randomAnswer2)
+    this.state.arrayRandomValue.push(this.state.randomAnswer3)
+    this.state.arrayRandomValue.push(this.state.answer)
+    console.log("arrayRandomValue",this.state.arrayRandomValue)
 
+    this.setState({ answerRandomValue1: this.state.arrayRandomValue[Math.floor((Math.random() * this.state.arrayRandomValue.length))] })
+    console.log("answerRandomValue1",this.state.answerRandomValue1)
+    let removeValue1 = this.state.arrayRandomValue.indexOf(this.state.answerRandomValue1);
+    if (removeValue1 > -1) {
+      this.state.arrayRandomValue.splice(removeValue1, 1);
+    }
+    this.setState({ answerRandomValue2: this.state.arrayRandomValue[Math.floor((Math.random() * this.state.arrayRandomValue.length))] })
+    console.log("answerRandomValue2",this.state.answerRandomValue2)
+    let removeValue2 = this.state.arrayRandomValue.indexOf(this.state.answerRandomValue2);
+    if (removeValue2 > -1) {
+      this.state.arrayRandomValue.splice(removeValue2, 1);
+    }
+    this.setState({ answerRandomValue3: this.state.arrayRandomValue[Math.floor((Math.random() * this.state.arrayRandomValue.length))] })
+    console.log("answerRandomValue3",this.state.answerRandomValue3)
+    let removeValue3 = this.state.arrayRandomValue.indexOf(this.state.answerRandomValue3);
+    if (removeValue3 > -1) {
+      this.state.arrayRandomValue.splice(removeValue3, 1);
+    }
+    this.setState({ answerRandomValue4: this.state.arrayRandomValue[Math.floor((Math.random() * this.state.arrayRandomValue.length))] })
+    console.log("answerRandomValue4",this.state.answerRandomValue4)
+    let removeValue4 = this.state.arrayRandomValue.indexOf(this.state.answerRandomValue4);
+    if (removeValue4 > -1) {
+      this.state.arrayRandomValue.splice(removeValue4, 1);
+    }
   }
   componentDidMount() {
     console.log("componentDidMount result")
@@ -151,16 +213,16 @@ export default class ExercisesPage extends Component {
             <TouchableOpacity style={{ height: 50, width: 130, backgroundColor: 'pink' }} title="1"
               onPress={this.pressRandomAnswer1}>
               <Text style={styles.textFormat}
-                value={this.state.randomAnswer1}
-              >{this.state.randomAnswer1}</Text>
+                value={this.state.answerRandomValue1}
+              >{this.state.answerRandomValue1}</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.buttonstyle}>
 
             <TouchableOpacity style={{ height: 50, width: 130, backgroundColor: 'pink' }} title="2"
-              onPress={() => Alert.alert('2')}>
+              onPress={this.pressRandomAnswer2}>
               <Text style={styles.textFormat}
-                value={this.state.randomAnswer2}>{this.state.randomAnswer2}</Text>
+                value={this.state.answerRandomValue2}>{this.state.answerRandomValue2}</Text>
             </TouchableOpacity>
           </View>
 
@@ -169,10 +231,10 @@ export default class ExercisesPage extends Component {
           <View style={styles.buttonstyle}>
 
             <TouchableOpacity style={{ height: 50, width: 130, backgroundColor: 'pink' }} title="3"
-              onPress={() => Alert.alert('3')}>
+              onPress={this.pressRandomAnswer3}>
               <Text style={styles.textFormat}
-                value={this.state.randomAnswer3}
-              >{this.state.randomAnswer3}</Text>
+                value={this.state.answerRandomValue3}
+              >{this.state.answerRandomValue3}</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.buttonstyle}>
@@ -180,7 +242,7 @@ export default class ExercisesPage extends Component {
             <TouchableOpacity style={{ height: 50, width: 130, backgroundColor: 'pink' }} title="4"
               onPress={this.pressRandomAnswer4}>
               <Text style={styles.textFormat}
-                value={this.state.answer}>{this.state.answer}</Text>
+                value={this.state.answerRandomValue4}>{this.state.answerRandomValue4}</Text>
             </TouchableOpacity>
           </View>
 
