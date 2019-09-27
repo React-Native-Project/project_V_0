@@ -1,5 +1,7 @@
 const db = require("../database");
 let kids = db.kids;
+let kids2 = db.kids2;
+let kids3 = db.kids3;
 
 //write your code here
 
@@ -26,7 +28,33 @@ let kidsGet = (cb) => {
   });
 };
 
+//kids2
+let kidsGet2 = (cb) => {
+  console.log("get test")
+  kids2.find({}, (err, data) => {
+    if (err) {
+      cb(err);
+    } else {
+      cb(data);
+    }
+  });
+};
+
+//kids3
+let kidsGet3 = (cb) => {
+  console.log("get test")
+  kids3.find({}, (err, data) => {
+    if (err) {
+      cb(err);
+    } else {
+      cb(data);
+    }
+  });
+};
+
 module.exports = {
   kidsPost,
-  kidsGet
+  kidsGet,
+  kidsGet2,
+  kidsGet3
 };

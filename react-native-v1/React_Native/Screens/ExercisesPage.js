@@ -6,7 +6,8 @@ import {
   Text,
   Alert,
   TouchableOpacity,
-  TextInput
+  TextInput,
+  TouchableHighlight
 } from 'react-native';
 export default class ExercisesPage extends Component {
   state = {
@@ -15,6 +16,7 @@ export default class ExercisesPage extends Component {
     operator: "",
     answer: 0,
     defaultAnswer: "?",
+    resetdefaultAnswer: "?",
     exercises: [],
     oneExercise: [],
     randomAnswer1: "",
@@ -25,12 +27,32 @@ export default class ExercisesPage extends Component {
     answerRandomValue2: 0,
     answerRandomValue3: 0,
     answerRandomValue4: 0,
-    arrayRandomValue: []
+    arrayRandomValue: [],
+    clickbutton: true,
+  }
+  componentDidMount() {
+    console.log('clickbutton', this.state.clickbutton)
+    console.log("componentDidMount result")
+    axios.get('http://192.168.1.186:9000/test')
+      .then(response => {
+        console.log("componentDidMount then")
+        this.setState({ exercises: response.data })
+        console.log(response.data);
+        console.log("exercises", this.state.exercises);
+        this.randomExercise(this.state.exercises)
+        this.randomNumber(this.state.arrayNumbers)
+
+      })
+      .catch(error => {
+        console.log("componentDidMount error")
+        console.log("Error", error);
+      });
   }
   pressRandomAnswer1 = () => {
     if (this.state.answerRandomValue1 === this.state.answer) {
       Alert.alert('Excellent Right Answer')
-      // this.randomExercise(this.state.exercises)
+      this.setState({ defaultAnswer: this.state.answer })
+      this.setState({ clickbutton: false })
     }
     else {
       Alert.alert('Wrong Answer')
@@ -39,7 +61,8 @@ export default class ExercisesPage extends Component {
   pressRandomAnswer2 = () => {
     if (this.state.answerRandomValue2 === this.state.answer) {
       Alert.alert('Excellent Right Answer')
-      // this.randomExercise(this.state.exercises)
+      this.setState({ defaultAnswer: this.state.answer })
+      this.setState({ clickbutton: false })
     }
     else {
       Alert.alert('Wrong Answer')
@@ -48,7 +71,8 @@ export default class ExercisesPage extends Component {
   pressRandomAnswer3 = () => {
     if (this.state.answerRandomValue3 === this.state.answer) {
       Alert.alert('Excellent Right Answer')
-      // this.randomExercise(this.state.exercises)
+      this.setState({ defaultAnswer: this.state.answer })
+      this.setState({ clickbutton: false })
     }
     else {
       Alert.alert('Wrong Answer')
@@ -57,22 +81,14 @@ export default class ExercisesPage extends Component {
   pressRandomAnswer4 = () => {
     if (this.state.answerRandomValue4 === this.state.answer) {
       Alert.alert('Excellent Right Answer')
-      // this.randomExercise(this.state.exercises)
+      this.setState({ defaultAnswer: this.state.answer })
+      this.setState({ clickbutton: false })
     }
     else {
       Alert.alert('Wrong Answer')
     }
   }
-  // pressRandomAnswer4 = () => {
-  //   if (this.state.answer === this.state.answer) {
-  //     Alert.alert('Excellent Right Answer')
-  //     // this.randomExercise(this.state.exercises)
-  //     this.setState({ defaultAnswer: this.state.answer })
-  //   }
-  //   else {
-  //     Alert.alert('Wrong Answer')
-  //   }
-  // }
+
   randomExercise(obj) {
     console.log("random")
     console.log(obj)
@@ -166,28 +182,31 @@ export default class ExercisesPage extends Component {
       this.state.arrayRandomValue.splice(removeValue4, 1);
     }
   }
-  componentDidMount() {
-    console.log("componentDidMount result")
-    axios.get('http://10.60.175.26:9000/test')
+  refresh = () => {
+    this.setState({ defaultAnswer: this.state.resetdefaultAnswer })
+    console.log("refresh result")
+    axios.get('http://192.168.1.186:9000/test')
       .then(response => {
-        console.log("componentDidMount then")
+        console.log("refresh then")
         this.setState({ exercises: response.data })
         console.log(response.data);
         console.log("exercises", this.state.exercises);
+        this.setState({ arrayNumbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] })
         this.randomExercise(this.state.exercises)
         this.randomNumber(this.state.arrayNumbers)
-
+        this.setState({ clickbutton: true })
       })
       .catch(error => {
         console.log("componentDidMount error")
         console.log("Error", error);
       });
   }
-  render() {
 
+  render() {
+    console.log('clickbutton', this.state.clickbutton)
     return (
       <View style={styles.container}>
-        <Text>ok</Text>
+
         <View style={styles.row}>
           <TextInput
             style={{ height: 40, width: 70, fontSize: 40, textAlign: 'center' }}
@@ -210,7 +229,6 @@ export default class ExercisesPage extends Component {
         </View>
         <View style={styles.row1}>
           <View style={styles.buttonstyle}>
-            {/* onPress={() => Alert.alert('1')} */}
             <TouchableOpacity style={{ height: 50, width: 130, backgroundColor: 'pink' }} title="1"
               onPress={this.pressRandomAnswer1}>
               <Text style={styles.textFormat}
@@ -248,6 +266,12 @@ export default class ExercisesPage extends Component {
           </View>
 
         </View>
+        <View style={styles.row3}>
+          <TouchableHighlight style={styles.main} onPress={this.refresh}
+            disabled={this.state.clickbutton}>
+            <Text style={styles.textbutton}>Next</Text>
+          </TouchableHighlight>
+        </View>
 
       </View>
     );
@@ -257,15 +281,19 @@ export default class ExercisesPage extends Component {
 const styles = StyleSheet.create({
   container: {
     display: "flex",
+    paddingTop: 120,
+
   },
   text: {
     color: 'red',
+    marginTop: 70
   },
   row: {
     display: "flex",
     flexDirection: "row",
     justifyContent: 'flex-start',
-    margin: 20
+    margin: 20,
+
   },
   row1: {
     display: "flex",
@@ -278,20 +306,40 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: 'center'
   },
+  row3: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: 'center'
+  },
   buttonstyle: {
     margin: 10,
-    // color: 'blue',
     width: 140,
   },
   textFormat: {
     textAlign: "center",
     paddingTop: 13,
-
   },
 
   textOpartor: {
     textAlign: "center",
     fontSize: 40,
-
+  }
+  ,
+  main: {
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderColor: "#c71875",
+    borderRadius: 5,
+    borderWidth: 1,
+    height: 50,
+    width: 90,
+    padding: 10,
+    backgroundColor: "#c71875",
+    bottom: 2,
+    marginTop: 90,
+  },
+  textbutton: {
+    color: "white",
+    paddingTop: 3,
   }
 });

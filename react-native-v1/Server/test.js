@@ -22,4 +22,22 @@ router.get("/", (req, res) => {
   });
 });
 
+
+//kids2
+router.get("/kids2", (req, res) => {
+  console.log("test get server")
+  mongo.kidsGet2(result => {
+    res.json(result);
+  });
+});
+
+//kids3
+router.get("/kids3", (req, res) => {
+  console.log("test get server")
+  mongo.kidsGet3(result => {
+    res.json(result);
+  });
+});
+
+
 module.exports = router;

@@ -38,18 +38,39 @@ class Main extends Component {
             <Text style={styles.text}>Numbers</Text>
           </TouchableHighlight>
 
-          <TouchableHighlight
+          {/* <TouchableHighlight
             style={styles.main}
             onPress={() => this.onPress("ExercisesPage")}
           >
             <Text style={styles.text}>ExercisesPage</Text>
+          </TouchableHighlight> */}
+
+          {/* <TouchableHighlight
+            style={styles.main}
+            onPress={() => this.onPress("ExercisesPage1")}
+          >
+            <Text style={styles.text}>ExercisesPage 1</Text>
+          </TouchableHighlight>
+
+          <TouchableHighlight
+            style={styles.main}
+            onPress={() => this.onPress("ExercisesPage2")}
+          >
+            <Text style={styles.text}>ExercisesPage 2</Text>
+          </TouchableHighlight> */}
+
+          <TouchableHighlight
+            style={styles.main}
+            onPress={() => this.onPress("ExercisesTypes")}
+          >
+            <Text style={styles.text}>Exercises</Text>
           </TouchableHighlight>
 
           <TouchableHighlight
             style={styles.main}
             onPress={() => this.onPress("QuizLevels")}
           >
-            <Text style={styles.text}>QuizLevels</Text>
+            <Text style={styles.text}>Quiz</Text>
           </TouchableHighlight>
         </ImageBackground>
 
