@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+
+import { View, Text, StyleSheet, ImageBackground, TouchableHighlight, Button } from "react-native";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 import {
   View,
   Text,
@@ -7,7 +10,6 @@ import {
   TouchableHighlight,
   Button
 } from "react-native";
-
 class Main extends Component {
   static navigationOptions = {
     title: "Mathematical Kids",
@@ -30,24 +32,23 @@ class Main extends Component {
             alignItems: "center"
           }}
         >
-          <TouchableHighlight
-            style={styles.main}
-            onPress={() => this.onPress("Numbers")}
-          >
+          <TouchableHighlight style={styles.main} onPress={() => this.onPress("Numbers")}>
             <Text style={styles.text}>Numbers</Text>
           </TouchableHighlight>
+
+
+
+          <TouchableHighlight style={styles.main} onPress={() => this.onPress("ExercisesTypes")}>
 
           <TouchableHighlight
             style={styles.main}
             onPress={() => this.onPress("ExercisesTypes")}
           >
+
             <Text style={styles.text}>Exercises</Text>
           </TouchableHighlight>
 
-          <TouchableHighlight
-            style={styles.main}
-            onPress={() => this.onPress("QuizLevels")}
-          >
+          <TouchableHighlight style={styles.main} onPress={() => this.onPress("QuizLevels")}>
             <Text style={styles.text}>Quiz</Text>
           </TouchableHighlight>
         </ImageBackground>

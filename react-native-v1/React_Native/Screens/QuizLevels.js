@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import { View, Text, TouchableHighlight, StyleSheet, Button } from "react-native";
 import {
   View,
   Text,
   TouchableHighlight,
   StyleSheet,
 } from "react-native";
+
 import Slider from "react-native-slider";
 
 export default class QuizLevels extends Component {
@@ -16,18 +18,25 @@ export default class QuizLevels extends Component {
 
   state = {
     value: 1,
-    level: "Easy"
+    value1: 1,
+    level: "Easy",
+    indexS: 0,
+    indexE: 1
   };
 
   valueHandler = x => {
     this.setState({ value: x });
-    if (x <= 20) this.setState({ level: "Easy" });
-    else if (x <= 40) this.setState({ level: "Middle" });
-    else this.setState({ level: "Hard" });
+  };
+
+  valueHandler2 = x => {
+    this.setState({ value1: x });
+    if (x === 1) this.setState({ level: "Easy", indexS: 0, indexE: 19 });
+    else if (x === 2) this.setState({ level: "Middle", indexS: 20, indexE: 39 });
+    else this.setState({ level: "Hard", indexS: 40, indexE: 59 });
   };
 
   onPress = () => {
-    this.props.navigation.navigate({ routeName: "QuizPage" });
+    this.props.navigation.navigate("QuizPage", { numOfQ: this.state.value, indexS: this.state.indexS });
   };
 
   render() {
@@ -35,14 +44,19 @@ export default class QuizLevels extends Component {
       <View style={styles.container}>
         <View>
           <Text style={styles.text}>Quiz Level: {this.state.level}</Text>
-          <Text style={styles.text}>
-            Number of questions: {this.state.value}
-          </Text>
+          <Slider
+            value={this.state.value1}
+            onValueChange={value => this.valueHandler2(value)}
+            minimumValue={1}
+            maximumValue={3}
+            step={1}
+          />
+          <Text style={styles.text}>Number of questions: {this.state.value}</Text>
           <Slider
             value={this.state.value}
             onValueChange={value => this.valueHandler(value)}
             minimumValue={1}
-            maximumValue={50}
+            maximumValue={20}
             step={1}
           />
         </View>
@@ -79,11 +93,12 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 1,
     height: 50,
-    padding: 10,
     backgroundColor: "#c71875",
-    bottom: 2
+    margin: 25
   },
   textbutton: {
-    color: "white"
+    fontSize: 30,
+    color: "white",
+    paddingBottom: 10
   }
 });
