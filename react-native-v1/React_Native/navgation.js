@@ -8,17 +8,19 @@ import ExercisesTypes from "./Screens/ExercisesTypes";
 import Numbers from "./Screens/Numbers";
 import QuizLevels from "./Screens/QuizLevels";
 import QuizPage from "./Screens/QuizPage";
+import Quizscore from "./Screens/scorepage";
 
 const MathNavigator = createStackNavigator(
   {
     Main: MainScreen,
     ExercisesPage: ExercisesPage,
-    ExercisesPage1:ExercisesPage1,
-    ExercisesPage2:ExercisesPage2,
+    ExercisesPage1: ExercisesPage1,
+    ExercisesPage2: ExercisesPage2,
     ExercisesTypes: ExercisesTypes,
     Numbers: Numbers,
     QuizLevels: QuizLevels,
-    QuizPage: QuizPage
+    QuizPage: QuizPage,
+    scorepage: Quizscore
   },
   { headerLayoutPreset: "center" }
 );
