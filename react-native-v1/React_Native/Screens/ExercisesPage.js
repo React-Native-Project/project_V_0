@@ -23,10 +23,10 @@ export default class ExercisesPage extends Component {
     clickbutton: true
   };
   componentDidMount() {
-    console.log("clickbutton", this.state.clickbutton);
-    console.log("componentDidMount result");
-    axios
-      .get("http://192.168.1.186:9000/test")
+    console.log('clickbutton', this.state.clickbutton)
+    console.log("componentDidMount result")
+    axios.get('http://10.60.175.26:9000/test')
+
       .then(response => {
         console.log("componentDidMount then");
         this.setState({ exercises: response.data });
@@ -101,6 +101,7 @@ export default class ExercisesPage extends Component {
       }
     }
   }
+  
   randomNumber(numbers) {
     let answerRemove = this.state.arrayNumbers.indexOf(this.state.answer);
     if (answerRemove > -1) {
@@ -175,10 +176,10 @@ export default class ExercisesPage extends Component {
     }
   }
   refresh = () => {
-    this.setState({ defaultAnswer: this.state.resetdefaultAnswer });
-    console.log("refresh result");
-    axios
-      .get("http://192.168.1.186:9000/test")
+    this.setState({ defaultAnswer: this.state.resetdefaultAnswer })
+    console.log("refresh result")
+    axios.get('http://10.60.175.26:9000/test')
+
       .then(response => {
         console.log("refresh then");
         this.setState({ exercises: response.data });

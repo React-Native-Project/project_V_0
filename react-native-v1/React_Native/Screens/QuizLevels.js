@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 import { View, Text, TouchableHighlight, StyleSheet, Button } from "react-native";
+import {
+  View,
+  Text,
+  TouchableHighlight,
+  StyleSheet,
+} from "react-native";
+
 import Slider from "react-native-slider";
 
 export default class QuizLevels extends Component {
