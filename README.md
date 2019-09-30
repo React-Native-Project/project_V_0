@@ -2,9 +2,9 @@
 
 # Description
  Learning math for kids:
-● Numbers.
-● Compartion(>,<,=) and Operation(+,-,*,/).
-● Quiz and choose the level and the number of questions.
+● Numbers.  
+● Compartion(>,<,=) and Operation(+,-,*,/).  
+● Quiz and choose the level and the number of questions.   
 
 # Prerequisites
 react-navigation   
