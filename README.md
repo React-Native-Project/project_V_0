@@ -26,11 +26,8 @@ Methmatical Kids application is available through expo to install it simply add 
 # Contributing 
 <a href="https://facebook.github.io/react-native/">React Native</a>
 
-# License
-
-
 # Contact
-mathmatical.kids@orange.com
+rawabi.f.okour@gmail.com
 
 # Authors
 1. Rawabi Okour
