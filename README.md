@@ -7,11 +7,11 @@
 ● Quiz and choose the level and the number of questions.
 
 # Prerequisites
-react-navigation  /   
-react-navigation-stack
-react-native-app-intro-slider
-react-native-easy-grid
-react-native-slider
+react-navigation   
+react-navigation-stack  
+react-native-app-intro-slider   
+react-native-easy-grid   
+react-native-slider  
 axios
 
 
