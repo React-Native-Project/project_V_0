@@ -4,7 +4,6 @@ import {
   Text,
   TouchableHighlight,
   StyleSheet,
-  Button
 } from "react-native";
 import Slider from "react-native-slider";
 

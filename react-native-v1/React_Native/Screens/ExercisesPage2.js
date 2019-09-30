@@ -9,7 +9,6 @@ import {
     TextInput,
     TouchableHighlight
 } from 'react-native';
-import { genericTypeAnnotation } from '@babel/types';
 export default class ExercisesPage1 extends Component {
     state = {
         number1: 0,

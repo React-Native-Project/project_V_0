@@ -97,8 +97,8 @@ export default class ExercisesPage1 extends Component {
                 console.log(this.state.answer)
             }
         }
-
     }
+    
     randomNumber(numbers) {
         let answerRemove = this.state.arrayNumbers.indexOf(this.state.answer);
         if (answerRemove > -1) {

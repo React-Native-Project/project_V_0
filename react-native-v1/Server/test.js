@@ -39,8 +39,6 @@ router.get("/kids2", (req, res) => {
   });
 });
 
-
-
 router.post("/kids3", (req, res) => {
   let kids3Object = req.body
   mongo.kids3Post(kids3Object, result => {

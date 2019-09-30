@@ -7,7 +7,6 @@ import {
   TouchableHighlight,
   Button
 } from "react-native";
-import { createStackNavigator, createAppContainer } from "react-navigation";
 
 class Main extends Component {
   static navigationOptions = {
@@ -38,27 +37,6 @@ class Main extends Component {
             <Text style={styles.text}>Numbers</Text>
           </TouchableHighlight>
 
-          {/* <TouchableHighlight
-            style={styles.main}
-            onPress={() => this.onPress("ExercisesPage")}
-          >
-            <Text style={styles.text}>ExercisesPage</Text>
-          </TouchableHighlight> */}
-
-          {/* <TouchableHighlight
-            style={styles.main}
-            onPress={() => this.onPress("ExercisesPage1")}
-          >
-            <Text style={styles.text}>ExercisesPage 1</Text>
-          </TouchableHighlight>
-
-          <TouchableHighlight
-            style={styles.main}
-            onPress={() => this.onPress("ExercisesPage2")}
-          >
-            <Text style={styles.text}>ExercisesPage 2</Text>
-          </TouchableHighlight> */}
-
           <TouchableHighlight
             style={styles.main}
             onPress={() => this.onPress("ExercisesTypes")}
@@ -74,45 +52,6 @@ class Main extends Component {
           </TouchableHighlight>
         </ImageBackground>
 
-        {/* <TouchableHighlight
-        style={styles.main}
-        onPress={() => this.onPress("Numbers")}
-      >
-        <ImageBackground
-          source={require("../assets/num.png")}
-          style={{
-            width: "70%",
-            height: "40%",
-            justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
-          <Text>Numbers</Text>
-        </ImageBackground>
-      </TouchableHighlight>
-
-      <TouchableHighlight onPress={() => this.onPress("ExercisesPage")}>
-        <ImageBackground
-          source={require("../assets/num.png")}
-          style={{ width: "70%", height: "40%" }}
-        >
-          <Text>ExercisesPage</Text>
-        </ImageBackground>
-      </TouchableHighlight>
-
-      <TouchableHighlight onPress={() => this.onPress("QuizLevels")}>
-        <ImageBackground
-          source={require("../assets/num.png")}
-          style={{
-            width: "70%",
-            height: "40%",
-            justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
-          <Text>QuizLevels</Text>
-        </ImageBackground>
-      </TouchableHighlight> */}
       </View>
     );
   }
