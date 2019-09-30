@@ -7,7 +7,7 @@
 ● Quiz and choose the level and the number of questions.
 
 # Prerequisites
-react-navigation
+react-navigation  /   
 react-navigation-stack
 react-native-app-intro-slider
 react-native-easy-grid
