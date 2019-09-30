@@ -6,9 +6,9 @@ let kids3 = db.kids3;
 //write your code here
 
 
-let kidsPost = (number1, number2, operator, answer, cb) => {
+let kidsPost = (object, cb) => {
   console.log("post test")
-  kids.create({ number1: number1, number2: number2, operator: operator, answer: answer }, (err, data) => {
+  kids.create(object, (err, data) => {
     if (err) {
       cb(err);
     } else {
@@ -28,10 +28,33 @@ let kidsGet = (cb) => {
   });
 };
 
+let kids2Post = (object, cb) => {
+  console.log("post test")
+  kids2.create(object, (err, data) => {
+    if (err) {
+      cb(err);
+    } else {
+      cb(data);
+    }
+  });
+};
+
 //kids2
 let kidsGet2 = (cb) => {
   console.log("get test")
   kids2.find({}, (err, data) => {
+    if (err) {
+      cb(err);
+    } else {
+      cb(data);
+    }
+  });
+};
+
+
+let kids3Post = (object, cb) => {
+  console.log("post test")
+  kids3.create(object, (err, data) => {
     if (err) {
       cb(err);
     } else {
@@ -56,5 +79,7 @@ module.exports = {
   kidsPost,
   kidsGet,
   kidsGet2,
-  kidsGet3
+  kidsGet3,
+  kids2Post,
+  kids3Post,
 };

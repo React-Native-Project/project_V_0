@@ -167,7 +167,7 @@ export default class ExercisesPage1 extends Component {
     refresh = () => {
         this.setState({ defaultAnswer: this.state.resetdefaultAnswer })
         console.log("refresh result")
-        axios.get('http://192.168.1.186:9000/test/kids2')
+        axios.get('http://10.60.175.26:9000/test/kids2')
             .then(response => {
                 console.log("refresh then")
                 this.setState({ exercises: response.data })
@@ -187,7 +187,7 @@ export default class ExercisesPage1 extends Component {
     componentDidMount() {
         console.log('clickbutton', this.state.clickbutton)
         console.log("componentDidMount result")
-        axios.get('http://192.168.1.186:9000/test/kids2')
+        axios.get('http://10.60.175.26:9000/test/kids2')
             .then(response => {
                 console.log("componentDidMount then")
                 this.setState({ exercises: response.data })
