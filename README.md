@@ -19,7 +19,7 @@ axios
 # Installation 
 Methmatical Kids application is available through expo to install it simply add the following line in terminal:
 
-<code>npm i</code>
+<code>npm i</code>  
 <code>npm start</code>
 
 
