@@ -23,7 +23,7 @@ export default class QuizPage extends Component {
     let i = JSON.stringify(this.props.navigation.getParam("indexS", 0));
     let nq = parseInt(JSON.stringify(this.props.navigation.getParam("numOfQ", 1)));
     let f = parseInt(i) + parseInt(nq);
-    this.setState({ index: i, Data: quiz.slice(i, f), numOfQ: nq }, () => {});
+    this.setState({ index: i, Data: quiz.slice(i, f), numOfQ: nq }, () => { });
   };
 
   check = text => {
@@ -41,7 +41,7 @@ export default class QuizPage extends Component {
     this.setState({ answered: "" });
     if (this.state.numOfQ == a) {
       this.setState({ qCounter: 0 });
-      this.props.navigation.navigate("scorepage", { correct: this.state.aCounter, totalQ: this.state.numOfQ });
+      this.props.navigation.navigate("scorepage", { correct: b, totalQ: this.state.numOfQ });
     } else this.setState({ qCounter: a });
   };
 
@@ -83,7 +83,8 @@ const styles = StyleSheet.create({
   },
   input: {
     borderColor: "#c71875",
-    borderWidth: 5
+    borderWidth: 5,
+    paddingLeft: 60
   },
   main: {
     justifyContent: "center",

@@ -10,6 +10,11 @@ import {
     TouchableHighlight
 } from 'react-native';
 export default class ExercisesPage1 extends Component {
+    static navigationOptions = {
+        title: "Greater & Smaller",
+        headerStyle: { backgroundColor: "#c71875" },
+        headerTitleStyle: { color: "white" }
+    };
     state = {
         number1: 0,
         number2: 0,

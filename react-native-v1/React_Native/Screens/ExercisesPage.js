@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import axios from "axios";
 import { StyleSheet, View, Text, Alert, TouchableOpacity, TextInput, TouchableHighlight } from "react-native";
 export default class ExercisesPage extends Component {
+  static navigationOptions = {
+    title: "Add & Sub",
+    headerStyle: { backgroundColor: "#c71875" },
+    headerTitleStyle: { color: "white" }
+  };
   state = {
     number1: 0,
     number2: 0,

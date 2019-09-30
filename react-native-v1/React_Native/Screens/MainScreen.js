@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-
-import { View, Text, StyleSheet, ImageBackground, TouchableHighlight, Button } from "react-native";
-import { createStackNavigator, createAppContainer } from "react-navigation";
 import {
   View,
   Text,
@@ -35,10 +32,6 @@ class Main extends Component {
           <TouchableHighlight style={styles.main} onPress={() => this.onPress("Numbers")}>
             <Text style={styles.text}>Numbers</Text>
           </TouchableHighlight>
-
-
-
-          <TouchableHighlight style={styles.main} onPress={() => this.onPress("ExercisesTypes")}>
 
           <TouchableHighlight
             style={styles.main}
